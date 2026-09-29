@@ -1,9 +1,9 @@
 {
-     "workflow_status": "IN_PROGRESS",
-     "execution_mode": "RESUME",
-     "current_phase": "SDLC_Code_Review_Assistant",
-     "completed_phases": ["gap_analyzer", "create_jira_tickets", "SDLC_Requirements_Assistant", "SDLC_Planning_Assistant", "SDLC_Design_Assistant", "SDLC_Development_Assistant", "SDLC_Code_Review_Assistant"],
-     "next_phase": "SDLC_Testing_Assistant",
-     "rerun_phase": "",
-     "reason": "Phase 6 code review completed"
-   }
+  "workflow_status": "IN_PROGRESS",
+  "execution_mode": "RESUME",
+  "current_phase": "SDLC_Deployment_Assistant",
+  "completed_phases": ["gap_analyzer", "create_jira_tickets", "SDLC_Requirements_Assistant", "SDLC_Planning_Assistant", "SDLC_Design_Assistant", "SDLC_Development_Assistant", "SDLC_Code_Review_Assistant", "SDLC_Testing_Assistant", "SDLC_Deployment_Assistant"],
+  "next_phase": "SDLC_Documentation_Assistant",
+  "rerun_phase": "",
+  "reason": "Phase 8 deployment completed"
+}
