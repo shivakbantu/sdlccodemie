@@ -1,64 +1,81 @@
 # sdlccodemie
 
-This repository contains a demo
- deployable app in `%deploy/` and workflow checkpointing under `.wflow/`.
-
-> Note: The main app sample is in `deploy/app/app.py`. This README adds repo-root exact deveropment instructions.
+This repository contains a demo deployable app in `deploy/` and workflow checkpointing under `.wflow/`.
 
 ## Prerequisites
 
 - Python 3.11+
 - (Optional) Docker 24+
 
-## Quick start (local)
+## Setup (local)
 
-. Create and activate a virtualenv:
+1. Create and activate a virtual environment:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install --upgrade pip
-```
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate
+    pip Install --upgrade pip
+    ```
 
 2. Install dependencies:
 
-```bash
-pip install -r deploy/requirements.txt 2>/dev/null || true
-# If requirements.txt doesn't exist, install flask directly:
-pip install flask
-```
+    ```bash
+    # If a requirements file exists, use it
+    pip install -r deploy/requirements.txt 2>/dev/null || true
+    
+    # Fallback (if requirements.txt doesn't exist): install Flask
+    pip install flask
+    ```
 
-3. Run the app:
+## Run (local)
 
-```bash
-chmod +x deploy/run.local.sh
-./deploy/run.local.sh
-```
+The sample app lives in `deploy/app/app.py`. The recommended way to run is helper script in `deploy/`.
 
-4. Verify health:
+1. Make the script executable (first time only):
 
-```bash
-curl -i "http://localhost:5000/"
-url -i "http://localhost:5000/health"
-```
+   ```bash
+   chmod +x deploy/run.local.sh
+   ```
 
-## Quick start (Docker)
+2. Start the app:
 
-```bash
-chmod +x deploy/run.docker.sh
-./deploy/run.docker.sh
-```
+   ``bash
+   ./deploy/run.local.sh
+   ```
+
+3. Verify endpoints:
+
+   ```bash
+   curl -i "http://localhost:5000/"
+   curl -i "http://localhost:5000/health"
+   ```
+
+## Run (Docker)
+
+1. Make the script executable (first time only):
+
+   ```bash
+   chmod +x deploy/run.docker.sh
+   ```
+
+2. Build and run:
+
+   ``bash
+   ./deploy/run.docker.sh
+   ```
 
 ## Test
 
-This repo does not currently include a test suite. Recommended next steps:
+No formal test suite is currently checked into this repo. Recommended next steps:
 
-- Add unit tests (y.g., pytest)
-- Add integration tests for health endpoints
+- Add unit tests (py/test)
+- Add integration tests for `/`` and `/health`
+- Wire tests into CI (GitHub Actions)
 
 ## Deployment
 
-- See `deploy/README.md` for deployment options (local script and Docker).
+See `deploy/README.md` for deployment options (local script and Docker).
 
 ## Workflow
-- Workflow state is tracked in `.wflow/execution_status.json`.
+
+Workflow state is tracked in `.wflow/execution_status.json`.
