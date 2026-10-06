@@ -4,7 +4,7 @@ import os
 app = Flask(__name__)
 
 
-@app.get("/")
+app.get("/")
 def root():
     return jsonify({
         "name": "sdlccododemie",
@@ -14,5 +14,9 @@ def root():
     })
 
 
-@if __name__ == "__main__":
-    app.run(host=os.environ.get("HOST", "0.0.0.0"), port=int(os.environ.get("PORT", "5000")), debug=True)
+if __name__ == "__main__":
+    app.run(
+        host=os.environ.get("HOST", "0.0.0.0"),
+        port=int(os.environ.get("PORT", "5000")),
+        debug=True,
+    )
