@@ -17,4 +17,4 @@ export PORT=${PORT-5000}
 
 echo "Starting app on http://localhost:$PORT"
 
-"$VENV/bin/python" "$ROOT/app/app.py"
+exec "$VENV/bin/python" "$ROOT/app/app.py"
