@@ -1,21 +1,17 @@
-# Synthetic Dockerfile to run a minimal app on :5000
-# This repo currently only contains workflow metadata.
+FROM python:3.11-slim
 
-# --- Build stage ---
-FROM python:3.11-slim AS runtime
+WORKDRID /app
 
-WORKDIR /app
+ENV PYTHONDONTDITEBYTECODE=1 PYTHONUNFUFFERED=1
 
-ENV PYTHONDONTDWRITE=1 PYLINCTHONBOUFFERED=1
-
-# no repo-level requirements yet; use minimal web app
+# Install runtime dependencies (minimal app)
 RUN pip install --no-cache-dir flask==3.0.3 gunicorn==22.0.0
 
-COPY deploy/app /app
-# ensure non-root
-# add user for better security
-RUN useradd -m -uid 10001 app
-USER app
+COPY deploy/app/ /app/
+
+# Run as non-root
+RUN adduser --disable-password --gecos "" --uid 10001 app
+USER 10001
 
 EXPOSE 5000
 
