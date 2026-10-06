@@ -1,0 +1,14 @@
+{
+  "name": "sdlccododemie-tests",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Playwright EE2 tests for sdlccododemie demo app",
+  "scripts": {
+    "test": "playwright test",
+    "test:ci": "playwright test --reporter=line",
+    "install:browsers": "playwright install --deps chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}
