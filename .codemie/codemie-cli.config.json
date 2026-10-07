@@ -1,0 +1,67 @@
+{
+  "version": 2,
+  "activeProfile": "default",
+  "profiles": {},
+  "codemieAssistants": [
+    {
+      "id": "2dafc505-4175-40c5-9148-2e5db07bbb1d",
+      "name": "Playwright Unit Test Generator",
+      "slug": "playwright-unit-test-generator",
+      "description": "An engineering-focused assistant that reads an application’s code repository, identifies user flows and critical components, and generates unit and UI tests using Playwright (via MCP integration in the user’s environment). It can map existing app routes/pages/components to testable scenarios, propose a maintainable Playwright test structure, create test files and fixtures, and suggest test data strategies and selectors. It also helps integrate tests into CI by recommending conventions for running Playwright, organizing projects, and setting baselines. The assistant is optimized for turning an existing repo into a runnable automated test suite with clear, deterministic assertions.",
+      "project": "shivakumar_bantu@epam.com",
+      "registeredAt": "2026-10-06T13:40:43.757Z",
+      "registrationMode": "agent",
+      "agentTargets": [
+        "claude"
+      ]
+    },
+    {
+      "id": "b893d42c-9faa-42ef-b473-e17b5bdd3fe8",
+      "name": "Jira Requirement Retriever",
+      "slug": "jira-requirement-retriever",
+      "description": "An assistant that retrieves and displays a Jira requirement when the user provides a requirement ID (issue key). It uses the Jira toolkit to fetch the issue details, then presents the requirement in a clean, readable format, including key fields such as summary, description, status, priority, assignee, reporter, acceptance criteria (if present), and relevant links or attachments when available. It can also help users interpret the requirement content and extract actionable items, while staying within the information returned from Jira.",
+      "project": "shivakumar_bantu@epam.com",
+      "registeredAt": "2026-10-06T13:40:43.763Z",
+      "registrationMode": "agent",
+      "agentTargets": [
+        "claude"
+      ]
+    },
+    {
+      "id": "3d4190c4-f04c-4822-bb1a-600ff1803bae",
+      "name": "Business Analyst Agent",
+      "slug": "business-analyst-agent",
+      "description": "An enterprise requirements assistant that retrieves a requirement from Jira when the user provides an issue ID, displays the requirement back for confirmation, optionally enriches/expands it using content from a user-supplied Confluence page link, then asks for approval and publishes the finalized requirement into Confluence, returning the created/updated Confluence page link. Designed for BA/product/engineering teams to streamline requirement intake, refinement, and documentation with clear approval checkpoints.",
+      "project": "shivakumar_bantu@epam.com",
+      "registeredAt": "2026-10-06T13:40:43.767Z",
+      "registrationMode": "agent",
+      "agentTargets": [
+        "claude"
+      ]
+    },
+    {
+      "id": "d58cc379-2bfb-4416-93b5-5b0822e14f17",
+      "name": "Plan Publisher",
+      "slug": "plan-publisher",
+      "description": "A software development planning agent that turns Confluence feature requests/specs into structured, reviewable development design plans. It reads a specified Confluence page (and any referenced child/linked pages up to a limited depth), extracts requirements and acceptance criteria without inventing missing details, and produces a comprehensive design plan covering problem statement, scope, technical approach, architecture/flow, data model and API/UI changes, dependencies, risks, testing strategy, rollout/rollback, and an implementation task breakdown. It publishes the plan back to Confluence in an idempotent way (update existing Design Plan pages instead of duplicating, preserving human-authored content and only replacing agent-owned sections), then mirrors the same plan as a versioned markdown document in a Git repository on a new feature branch, and opens/updates a pull request against a protected base branch. Optionally links or references a Jira ticket for traceability, and reports outcomes and open questions with clear failure handling if any phase cannot be completed due to permissions or errors.",
+      "project": "shivakumar_bantu@epam.com",
+      "registeredAt": "2026-10-06T13:40:43.770Z",
+      "registrationMode": "agent",
+      "agentTargets": [
+        "claude"
+      ]
+    },
+    {
+      "id": "b6c5ed9e-749e-4d1f-adab-dfa387067eaa",
+      "name": "Design PR Assistant",
+      "slug": "design-pr-assistant",
+      "description": "An assistant that turns provided architecture inputs (architecture documents/diagrams, high-level design, low-level design, and wireframes) into a clear implementation plan for user review, then prepares a pull request that adds the approved plan as a Markdown file (plan.md) under a docs/ folder in a Git repository. It structures plans into phases, milestones, deliverables, risks, assumptions, and review checkpoints, and can help refine the plan iteratively before creating the PR.",
+      "project": "shivakumar_bantu@epam.com",
+      "registeredAt": "2026-10-06T13:40:43.773Z",
+      "registrationMode": "agent",
+      "agentTargets": [
+        "claude"
+      ]
+    }
+  ]
+}

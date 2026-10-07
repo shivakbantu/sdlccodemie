@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StayFinder Hotel Booking</title>
+  <meta name="description" content="Browse hotels, filter, compare rooms and complete a simulated booking.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#app">Skip to content</a>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="logo" href="#/"><span aria-hidden="true">🏨</span> StayFinder</a>
+      <nav aria-label="Main">
+        <a href="#/">Hotels</a>
+        <span class="fav-badge" title="Saved hotels">♥ <span id="fav-count" hidden>0</span></span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <footer class="site-footer">
+    <div class="container">Demo app: all data is mock and nothing is sent to a server.</div>
+  </footer>
+
+  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+  <div id="modal-root"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/logic.js"></script>
+  <script src="js/views.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

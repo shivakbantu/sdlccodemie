@@ -1,0 +1,31 @@
+{
+  "name": "stayfinder-hotel-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend-only hotel browsing and simulated booking demo",
+  "scripts": {
+    "test": "playwright test",
+    "test:unit": "playwright test --project=unit",
+    "test:e2e": "playwright test --project=e2e-desktop --project=e2e-mobile",
+    "test:headed": "playwright test --project=e2e-desktop --headed",
+    "typecheck": "tsc --noEmit",
+    "report": "playwright show-report",
+    "start": "python -m http.server 8080"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
